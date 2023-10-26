@@ -7,7 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -15,7 +15,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+*/
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +24,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+#custom-button {
+  -webkit-appearance: button; /* 1 */
+  background-color: #1976d2; /* 2 */
+  background-image: none; /* 2 */
 }
