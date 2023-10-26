@@ -16,9 +16,7 @@ export default function Home() {
   const [initialRender, setInitialRender] = useState(true);
 
   function handleClick() {
-    const string = array.join("-")
-    setTiming(string)
-    console.log(timing)
+    console.log(array)
     if (!array[0]||!array[1]||!array[2]) {
       alert("You should select your age");
       return;
@@ -43,7 +41,7 @@ export default function Home() {
     newArray[4] = time._d.getMinutes(); 
     newArray[5] = 0;
     setArray(newArray)
-    const string = array.join("-")
+    const string = newArray.join("-")
     setTiming(string)
   }
 
