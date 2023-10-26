@@ -93,7 +93,7 @@ export default function Home() {
       <div className="flex flex-col h-full items-center font-mono text-sm lg:flex">
         {user ? (
           <div className="flex flex-col h-full items-center">
-          <h1 className="text-2xl mx-5">Time is running out </h1>
+          <h1 className="text-2xl mx-5">Clock Is Ticking</h1>
           <p className="text-lg mx-5">{time.years} years {time.months} months {time.days} days {time.hours} hours {time.minutes} minutes {time.seconds} seconds</p>
           </div>
         ) : (
@@ -103,11 +103,11 @@ export default function Home() {
               <div className='m-2'>
                 <DatePicker 
                 onChange={(e) => handledays(e)} 
-                label="Basic date picker" />
+                label="Date of born" />
               </div>
               <div className='m-2'>
               <TimePicker
-                label="With Time Clock"
+                label="Time of born"
                 viewRenderers={{
                   hours: renderTimeViewClock,
                   minutes: renderTimeViewClock,
