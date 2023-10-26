@@ -11,17 +11,16 @@ import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
 export default function Home() {
   const [array, setArray] = useState(new Array(6).fill(''));
   const [timing, setTiming] = useState('');
+  const [verification, setVerification] = useState(false);
   const [time, setTime] = useState(Object);
   const [user, setUser] = useState(false);
   const [initialRender, setInitialRender] = useState(true);
 
   function handleClick() {
-    console.log(array)
-    if (!array[0]||!array[1]||!array[2]) {
+    if (!verification) {
       alert("You should select your age");
       return;
     }
-    console.log(timing)
     window.localStorage.setItem('loggedDate', timing);
     window.location.reload()
   }
@@ -34,6 +33,9 @@ export default function Home() {
     const string = newArray.join("-")
     setArray(newArray);
     setTiming(string)
+    if(!verification){
+      setVerification(true);
+    }
   }
   function handleTime(time: any) {
     const newArray = [...array]
